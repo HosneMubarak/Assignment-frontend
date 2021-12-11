@@ -2,7 +2,7 @@
 *Please Make sure backend project server is running 8000 port and frontend 3000 port*
 
 In the project directory, you can run:
-
+### `npm install`
 ### `npm start`
 
 Runs the app in the development mode.\

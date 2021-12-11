@@ -117,19 +117,19 @@ class Form extends React.Component {
                                     {/*<input type="text" className="form-control" name="origin" placeholder="From"*/}
                                     {/*       autoComplete="on" required/>*/}
                                     <label>From <FontAwesomeIcon icon={faMapPin}/></label>
-                                    <Select required={"true"} options={options} name="origin"/>
+                                    {/*<Select required={"true"} options={options} name="origin"/>*/}
                                     {/*<div>*/}
                                     {/*    <label>Select City</label>*/}
-                                    {/*    <AsyncSelect*/}
-                                    {/*        placeholder="search"*/}
-                                    {/*        value={this.state.selectedOption}*/}
-                                    {/*        loadOptions={this.fetchData}*/}
-                                    {/*        onChange={(e) => {*/}
-                                    {/*            this.onSearchChange(e);*/}
-                                    {/*        }}*/}
-                                    {/*        defaultOptions={true}*/}
-                                    {/*        name="origin"*/}
-                                    {/*    />*/}
+                                        <AsyncSelect
+                                            placeholder="search"
+                                            value={this.state.selectedOption}
+                                            loadOptions={this.fetchData}
+                                            onChange={(e) => {
+                                                this.onSearchChange(e);
+                                            }}
+                                            defaultOptions={true}
+                                            name="origin"
+                                        />
                                     {/*</div>*/}
                                 </div>
                                 <div className="col-md-auto align-self-center">
@@ -139,18 +139,18 @@ class Form extends React.Component {
                                     {/*<input type="text" className="form-control" name="destination" placeholder="To"*/}
                                     {/*       autoComplete="on" required/>*/}
                                     <label>To <FontAwesomeIcon icon={faMapMarkerAlt}/></label>
-                                    <Select options={options} name="destination" required/>
+                                    {/*<Select options={options} name="destination" required/>*/}
                                     {/*<label>Select City</label>*/}
-                                    {/*<AsyncSelect*/}
-                                    {/*    placeholder="search"*/}
-                                    {/*    value={this.state.selectedOption2}*/}
-                                    {/*    loadOptions={this.fetchData}*/}
-                                    {/*    onChange={(e) => {*/}
-                                    {/*        this.onSearchChange2(e);*/}
-                                    {/*    }}*/}
-                                    {/*    defaultOptions={true}*/}
-                                    {/*    name="destination"*/}
-                                    {/*/>*/}
+                                    <AsyncSelect
+                                        placeholder="search"
+                                        value={this.state.selectedOption2}
+                                        loadOptions={this.fetchData}
+                                        onChange={(e) => {
+                                            this.onSearchChange2(e);
+                                        }}
+                                        defaultOptions={true}
+                                        name="destination"
+                                    />
                                 </div>
                             </div>
 
