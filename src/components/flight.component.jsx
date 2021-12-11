@@ -1,4 +1,5 @@
 import React from "react";
+import './flight.css';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {
     faPlaneDeparture,
@@ -18,8 +19,10 @@ class Flight extends React.Component {
     }
 
 
-
     render() {
+        function changeBackground(e) {
+            e.target.style.background = '#e9ecef';
+        }
 
         function getDateFormat(date) {
             var d = new Date(date),
@@ -57,14 +60,17 @@ class Flight extends React.Component {
                                                 found:</p>
                                         </div>
                                         <div className="col">
+                                            <p className="text-muted text-end">
+                                                <select onChange={this.props.getFlightDataSorted}
+                                                        className="p-1 text-muted" name="sort">
+                                                    <option className="text-muted" value="sort" selected
+                                                            disabled>Sort by price
+                                                    </option>
+                                                    <option value="low">Low to high</option>
+                                                    <option value="high">High to low</option>
+                                                </select>
 
-                                              <select onChange={this.props.getFlightDataSorted} className="p-1 text-muted" name="sort">
-                                                        <option className="text-muted" value="sort" selected
-                                                                disabled>Sort by price
-                                                        </option>
-                                                        <option value="low">Low to high</option>
-                                                        <option value="high">High to low</option>
-                                                    </select>
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
@@ -73,7 +79,7 @@ class Flight extends React.Component {
                         {
                             Object.entries(flights)
                                 .map(([key, value]) =>
-                                    <div className='card'>
+                                    <div className='card flight-div'>
                                         <div className='card-body'>
                                             <div className="row text-muted text-align-center">
                                                 <div className="row align-content-center">
@@ -175,13 +181,14 @@ class Flight extends React.Component {
                                         </div>
                                         <div className="col">
                                             <p className="text-muted text-end">
-                                                  <select onChange={this.props.getFlightDataSorted} className="p-1 text-muted" name="sort">
-                                                        <option className="text-muted" value="sort" selected
-                                                                disabled>Sort by price
-                                                        </option>
-                                                        <option value="low">Low to high</option>
-                                                        <option value="high">High to low</option>
-                                                    </select>
+                                                <select onChange={this.props.getFlightDataSorted}
+                                                        className="p-1 text-muted" name="sort">
+                                                    <option className="text-muted" value="sort" selected
+                                                            disabled>Sort by price
+                                                    </option>
+                                                    <option value="low">Low to high</option>
+                                                    <option value="high">High to low</option>
+                                                </select>
 
                                             </p>
                                         </div>
@@ -192,7 +199,7 @@ class Flight extends React.Component {
                         {
                             Object.entries(flights)
                                 .map(([key, value]) =>
-                                    <div className='card'>
+                                    <div className='card flight-div'>
                                         <div className='card-body'>
                                             <div className="row text-muted text-align-center">
                                                 <div className="row align-content-center">
